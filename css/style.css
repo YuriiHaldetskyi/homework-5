@@ -16,6 +16,7 @@
   --active-btn-cl: #188ce8;
   --text-black-cl-80: rgba(47, 48, 58, 0.8);
   --portf-cards-bg-cl-90: rgba(33, 150, 243, 0.9);
+  --modal-backdrop-cl: rgba(0, 0, 0, 0.2);
   /* Others */
   --main-br-cl: #eeeeee;
   --hero-shield-cl: rgba(47, 48, 58, 0.4);
@@ -190,6 +191,47 @@ p {
   align-items: center;
   background-position: center;
 }
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 2;
+  background-color: var(--modal-backdrop-cl);
+  transition: opacity var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--main-bg-cl);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
 .hero-title {
   font-weight: 900;
   font-size: 44px;
@@ -279,9 +321,11 @@ p {
 }
 .work-card-container {
   position: relative;
+  z-index: 1;
 }
 .work-card-text {
   position: absolute;
+
   bottom: 0;
   left: 0;
   width: 100%;
