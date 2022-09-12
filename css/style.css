@@ -105,9 +105,7 @@ p {
   display: inline;
 }
 .header-link {
-  transition-property: color;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus {
@@ -165,9 +163,9 @@ p {
   gap: 10px;
   color: var(--secondary-txt-cl);
   fill: var(--secondary-txt-cl);
-  transition-property: color, fill, stroke;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    fill var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    stroke var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-item-cont:hover,
 .header-item-cont:focus {
@@ -208,7 +206,6 @@ p {
   pointer-events: none;
   visibility: hidden;
 }
-
 .modal {
   position: absolute;
   width: 528px;
@@ -231,6 +228,7 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+  background-color: transparent;
 }
 .hero-title {
   font-weight: 900;
@@ -258,9 +256,8 @@ p {
   border-radius: 4px;
   border: none;
   padding: 10px 32px;
-  transition-property: background-color, box-shadow;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -325,7 +322,9 @@ p {
 }
 .work-card-text {
   position: absolute;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -336,7 +335,6 @@ p {
   text-align: center;
   text-transform: uppercase;
   color: var(--white-txt-cl);
-  padding: 26px 0;
 }
 /* Team */
 .team {
@@ -387,9 +385,8 @@ p {
   border-radius: 50%;
   background-color: var(--main-bg-cl);
   fill: var(--icon-link-cl);
-  transition-property: background-color, fill;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    fill var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-link:hover,
 .team-link:focus {
@@ -439,9 +436,8 @@ p {
   align-items: center;
   justify-content: center;
   fill: var(--icon-link-cl);
-  transition-property: background-color, fill;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    fill var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -478,9 +474,7 @@ p {
 }
 .adress {
   color: var(--white-txt-cl);
-  transition-property: color;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress:hover,
 .adress:focus {
@@ -489,9 +483,7 @@ p {
 /* Телефон і Пошта */
 .adress-link {
   color: var(--gray-txt-cl-60);
-  transition-property: color;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress-link:hover,
 .adress-link:focus {
@@ -520,9 +512,8 @@ p {
   border-radius: 50%;
   background-color: var(--icon-foot-cl);
   fill: var(--white-txt-cl);
-  transition-property: fill, background-color;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    background-color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sf-link:hover,
 .sf-link:focus {
@@ -553,17 +544,17 @@ p {
   cursor: pointer;
   font-family: inherit;
   background: var(--secondary-bg-cl);
-  border-radius: 0px;
   font-weight: 500;
   font-size: 16px;
   line-height: calc(26 / 16);
   text-align: center;
   border-radius: 4px;
-  border-color: transparent;
+  border: none;
   padding: 6px 22px;
-  transition-property: fill, background-color, color, box-shadow;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    background-color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    color var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portf-button:hover,
 .portf-button:focus {
@@ -586,9 +577,7 @@ p {
 
 .portf-link {
   display: block;
-  transition-property: box-shadow;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .img-container {
   position: relative;
@@ -602,9 +591,8 @@ p {
   background-color: var(--portf-cards-bg-cl-90);
   opacity: 0;
   transform: translateY(100%);
-  transition-property: opasity, transform;
-  transition-duration: var(--time-hover-effect);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opasity var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1),
+    transform var(--time-hover-effect) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portf-link:hover .card-overlay {
   opacity: 1;
